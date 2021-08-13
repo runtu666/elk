@@ -5,7 +5,7 @@ services:
     hostname: filebeat
     build: ./filebeat
     volumes:
-      - /root/app/docker/logs:/usr/share/filebeat/docker/logs
+      - ~/go/src/brush-go/service/api/logs:/usr/share/filebeat/docker/logs
     links:
       - logstash
   kibana:
