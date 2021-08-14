@@ -1,14 +1,6 @@
 version: '3'
 
 services:
-  filebeat:
-    restart: always
-    hostname: filebeat
-    build: ./filebeat
-    volumes:
-      - /root/app/docker/logs/:/usr/share/filebeat/docker/logs/
-    links:
-      - logstash
   kibana:
     restart: always
     image: docker.elastic.co/kibana/kibana:6.5.2

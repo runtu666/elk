@@ -11,16 +11,17 @@ filebeat.inputs:
 setup.template.settings:
   index.number_of_shards: 1
 
-# 定义kafka topic field
 fields:
-  log_topic: log-collection
+  service: brush-api
 
 # setup filebeat to send output to logstash
 output.logstash:
-  hosts: ["logstash"]
+  hosts: ["154.85.41.19:5044"]
 
 # ================================= Processors =================================
 processors:
   - decode_json_fields:
       fields: ['@timestamp','level','content','trace','span','duration']
       target: ""
+  - drop_fields:    #删除字段，不再kibana里面展示，默认情况kibana里面会自动展示这些beat字段
+      fields: ["beat"]
