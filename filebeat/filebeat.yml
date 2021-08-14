@@ -16,7 +16,7 @@ fields:
 
 # setup filebeat to send output to logstash
 output.logstash:
-  hosts: ["154.85.41.19:5044"]
+  hosts: ["logstash"]
 
 # ================================= Processors =================================
 processors:
