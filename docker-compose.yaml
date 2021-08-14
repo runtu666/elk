@@ -30,6 +30,7 @@ services:
       - "ES_JAVA_OPTS=-Xms256m -Xmx256m"
     volumes:
       - ./data/elasticsearch/data:/usr/share/elasticsearch/data
+#      - ./data/elasticsearch/logs:/usr/share/elasticsearch/logs
     ulimits:
       memlock:
         soft: -1
