@@ -3,7 +3,7 @@ version: '3'
 services:
   kibana:
     restart: always
-    image: kibana:7.17.6
+    image: kibana:7.6.1
     environment:
       - "LOGGING_QUIET=true"
     links:
@@ -13,7 +13,7 @@ services:
   logstash:
     restart: always
     hostname: logstash
-    image: logstash:7.17.6
+    image: logstash:7.6.1
     ports:
       - "5044:5044"
     volumes:
@@ -25,7 +25,7 @@ services:
   elasticsearch:
     restart: always
     hostname: elasticsearch
-    image: elasticsearch:7.17.6
+    image: elasticsearch:7.6.1
     environment:
       - "discovery.type=single-node"
     volumes:
